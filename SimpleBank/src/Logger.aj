@@ -34,19 +34,6 @@ public aspect Logger{
 	
 	pointcut success() : call(* com.bank.Bank.createUser() );
 	after() : success() {
-		System.out.println("**** Usuario creado ****");
+		System.out.println("**** User created ****");
 	}
 }
-
-
-/*public aspect Logger {
-
-    pointcut success() : call(* create*(..) );
-    after() : success() {
-    //Aspecto ejemplo: solo muestra este mensaje después de haber creado un usuario 
-    	System.out.println("**** User created ****");
-    }
-}
-*/
-
-
