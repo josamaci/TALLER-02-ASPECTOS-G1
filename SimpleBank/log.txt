@@ -1,0 +1,5 @@
+21:36:53.867107700 Transacción completada exitosamente.
+21:36:58.012061700 Transacción completada exitosamente.
+22:01:48.891 Transacción completada exitosamente.
+22:02:29.230 Retiro completado exitosamente.
+22:02:59.205 Retiro completado exitosamente.
