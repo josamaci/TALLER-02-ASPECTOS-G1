@@ -1,5 +1,5 @@
 import java.io.File;
-import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 public aspect Logger {
 	//after() : execution(void Bank.moneyMakeTransaction()){
@@ -7,9 +7,14 @@ public aspect Logger {
 	    //Aspecto: Deben hacer los puntos de cortes (pointcut) para crear un log con los tipos de transacciones realizadas.
 	    pointcut successTransaction() : call(* com.bank.Bank.moneyMakeTransaction());
 	    after() : successTransaction() {
-	    	System.out.println(LocalDateTime.now()+": Transacción completada exitosamente. ");
+	    	System.out.println(LocalTime.now()+": Transacción completada exitosamente. ");
 	    	
-	    }	
+	    }
+	    pointcut successWithdrawal() : call(* com.bank.Bank.moneyWithdrawal());
+	    after() : successWithdrawal() {
+	    	System.out.println(LocalTime.now()+": Retiro completado exitosamente. ");
+	    	
+	    }
 }
 
 
