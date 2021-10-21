@@ -1,4 +1,4 @@
 
-![resultado](resultado.png)*
+![resultado](resultado.png)
 
-![resultado2](resultado2.png)*
+![resultado2](resultado2.png)
