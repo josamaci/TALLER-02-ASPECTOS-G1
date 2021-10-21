@@ -1,23 +1,25 @@
 import java.time.LocalTime;
 import java.io.*;
 
-public aspect Logger {
-	//after() : execution(void Bank.moneyMakeTransaction()) {
-		FileWriter file = new FileWriter("C:\Users\Denise\workspace\GitHub\log.txt");		
+
+public aspect Logger{
+	//after() : execution(void Bank.moneyMakeTransaction()) {			
 	    //Aspecto: Deben hacer los puntos de cortes (pointcut) para crear un log con los tipos de transacciones realizadas.
-	    pointcut successTransaction() : call(* com.bank.Bank.moneyMakeTransaction());
+	File file = new File("log.txt");    
+	pointcut successTransaction() : call(* com.bank.Bank.moneyMakeTransaction());
 	    after() : successTransaction() {
 	    
-	    	String resultado = LocalTime.now()+": Transacción completada exitosamente. "
+	    	String resultado = LocalTime.now()+" Transacción completada exitosamente.\n";
 	    	
 	    	System.out.println(resultado);
 	    	
 	    	try {
-	    		file.write(resultado);
-	    		flie.close();
+	    		FileWriter fileWriter = new FileWriter(file,true);
+	    		fileWriter.write(resultado);
+	    		fileWriter.close();
 	    	}
 	    	
-	    	catch(Exception e) {
+	    	catch(IOException e) {
 		    	
 				System.out.println("Error");
 	    	}
@@ -40,4 +42,4 @@ public aspect Logger {
     	System.out.println("**** User created ****");
     }
     
-}
+}*/
