@@ -1,6 +1,6 @@
 
-![resultado](resultado.PNG)
+![resultado](resultado.png)
 
-![resultado2](resultado2.PNG)
+![resultado2](resultado2.png)
 
 ![resultado3](resultado3.PNG)
